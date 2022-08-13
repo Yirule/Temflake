@@ -1,0 +1,12 @@
+<onlyinclude>{{둘러보기
+| 과일
+| 배경색 = orange
+|
+  과일:
+    - 낭누
+  견과류:
+    - 완퉁
+    - 니뉘퉁
+}}<includeonly>[[분류:과일]]</includeonly></onlyinclude>
+
+[[분류:틀/둘러보기]]

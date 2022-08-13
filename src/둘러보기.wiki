@@ -1,0 +1,24 @@
+<onlyinclude>{| class="mw-collapsible wikitable" style="width: 100%; border: 2px solid {{{배경색|#fff}}};"
+! style="background-color: {{{배경색|#fff}}};" | {{{1|둘러보기 틀}}}
+|-
+| style="padding: 0;" |
+{{#invoke:Temflake|main|
+{{{2|
+A:
+  B:
+    C:
+      - Just example
+}}}
+}}
+|}</onlyinclude>
+
+{{둘러보기
+| 과일
+| 배경색 = orange
+|
+  과일:
+    - 낭누
+  견과류:
+    - 완퉁
+    - 니뉘퉁
+}}
