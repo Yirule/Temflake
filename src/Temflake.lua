@@ -42,21 +42,26 @@ end
 
 function render(t, depth)
 	local result = ""
-	for k, v in pairs(t) do
+	for i, k in ipairs(t._keys) do
+		v = t[k]
 		if isList(v) then
-			result = result .. wiki.td(wiki.link(k)) .. wiki.td("[[" .. table.concat(v, "]] · [[") .. "]]") .. "\n|-"
+			result = result .. wiki.td(wiki.link(k), {style = "width: 8em; background: #f5f8fa;"}) .. wiki.td("[[" .. table.concat(v, "]] · [[") .. "]]") .. "\n|-"
 		elseif type(v) == "table" then
-			result = result .. wiki.td(wiki.link(k), {rowspan = size(v)}) .. render(v, depth + 1)
+			result = result .. wiki.td(wiki.link(k), {rowspan = size(v) - 1, style = "width: 8em; background: #f5f8fa;"}) .. render(v, depth + 1)
 		end
 	end
 	return result
 end
 
-function p.main(yaml)
+function p._main(yaml)
 	return wiki.table(
 		render(parse(yaml), 0),
-		{class = "wikitable", style = "width: 100%;"}
+		{class = "wikitable", style = "width: 100%; margin: 0; border-collapse: separate;"}
 	)
+end
+
+function p.main(frame)
+	return p._main(frame.args[1])	
 end
 
 p.parse = parse
